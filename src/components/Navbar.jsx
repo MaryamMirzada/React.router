@@ -20,6 +20,13 @@ export default function Navbar() {
       >
         About
       </NavLink>
+      <NavLink
+        to="dashboard"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        {" "}
+        || Dashboard{" "}
+      </NavLink>
       <Outlet />
     </div>
   );
