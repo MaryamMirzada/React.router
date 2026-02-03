@@ -1,9 +1,25 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Navbar() {
+  const activeStyle = {
+    fontWeight: "bold",
+    color: "blue",
+  };
   return (
     <div>
-      <Link to="/">Home</Link> || <Link to="/about">About</Link>
+      <NavLink
+        to="/"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        Home
+      </NavLink>{" "}
+      ||{" "}
+      <NavLink
+        to="/about"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        About
+      </NavLink>
       <Outlet />
     </div>
   );
